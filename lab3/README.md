@@ -51,3 +51,75 @@ The game world consists of two main types of components: entities and world obje
 - **Interfaces**: The `Attackable` interface defines a contract that entities must implement to have the ability to attack. This demonstrates the power of interfaces in defining behavior without specifying implementation details.
 
 This project provides a basic foundation for understanding abstraction, inheritance, and interfaces in Java within the context of a simple fantasy game world.
+
+**Classes Dependency Diagram**
+---------------------------
+
+```mermaid
+classDiagram
+class GameObject {
+  -String name
+  -int health
+  +GameObject(String name, int health)
+  +String getName()
+  +int getHealth()
+  +void takeDamage(int damage)
+}
+
+class Entity {
+  -int attackPower
+  +Entity(String name, int health, int attackPower)
+  +int getAttackPower()
+  +void attack(Entity target)
+  +void update()
+}
+
+class WorldObject {
+  +WorldObject(String name, int health)
+}
+
+class Attackable {
+  +void attack(Entity target)
+}
+
+class Player {
+  -int score
+  +Player(String name, int health, int attackPower)
+  +int getScore()
+  +void increaseScore(int points)
+  +void interact(GameObject object)
+  +void update()
+}
+
+class Bandit {
+  +Bandit(String name, int health, int attackPower)
+  +void update()
+}
+
+class Wolf {
+  +Wolf(String name, int health, int attackPower)
+  +void update()
+}
+
+class Crate {
+  +Crate(String name)
+}
+
+class Tree {
+  +Tree(String name)
+}
+
+class Bush {
+  +Bush(String name)
+}
+
+GameObject <|-- Entity
+GameObject <|-- WorldObject
+Entity <|.. Attackable
+Entity <|-- Player
+Entity <|-- Bandit
+Entity <|-- Wolf
+WorldObject <|-- Crate
+WorldObject <|-- Tree
+WorldObject <|-- Bush
+```
