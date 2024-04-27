@@ -6,12 +6,6 @@ public  class Bandit extends Entity {
   }
 
   @Override
-  public void attack(Entity target) {
-    // bandit attack logic
-    target.takeDamage(getAttackPower());
-  }
-
-  @Override
   public void update() {
     // bandit update logic
   }
