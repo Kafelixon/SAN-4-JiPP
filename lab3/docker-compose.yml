@@ -1,0 +1,4 @@
+services:
+  my-java-app:
+    build: .
+    command: java -cp build game.Main
