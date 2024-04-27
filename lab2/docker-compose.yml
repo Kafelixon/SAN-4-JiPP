@@ -1,0 +1,4 @@
+services:
+  shape-area-calculator:
+    build: .
+    command: ["java", "ShapeAreaCalculator"]
