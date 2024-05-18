@@ -8,6 +8,7 @@ import lombok.Getter;
 public class Character {
   private String name;
   private int health;
-  private int mana;
+  @Builder.Default
+  private int mana = 0;
   private String role; // e.g., Warrior, Mage
 }

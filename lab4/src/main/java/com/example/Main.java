@@ -2,11 +2,18 @@ package com.example;
 
 public class Main {
   public static void main(String[] args) {
-    // Creating a character using the builder
-    Character character = Character.builder()
-        .name("Aragorn")
+    // Character with mana
+    Character mage = Character.builder()
+        .name("Gandalf")
         .health(100)
-        .mana(50)
+        .mana(250)
+        .role("Mage")
+        .build();
+
+    // Character without mana (uses default value)
+    Character warrior = Character.builder()
+        .name("Aragorn")
+        .health(150)
         .role("Warrior")
         .build();
 
@@ -18,11 +25,17 @@ public class Main {
         .build();
 
     // Output to demonstrate usage
-    System.out.println("Character Details:");
-    System.out.println("Name: " + character.getName());
-    System.out.println("Health: " + character.getHealth());
-    System.out.println("Mana: " + character.getMana());
-    System.out.println("Role: " + character.getRole());
+    System.out.println("Mage Details:");
+    System.out.println("Name: " + mage.getName());
+    System.out.println("Health: " + mage.getHealth());
+    System.out.println("Mana: " + mage.getMana());
+    System.out.println("Role: " + mage.getRole());
+
+    System.out.println("\nWarrior Details:");
+    System.out.println("Name: " + warrior.getName());
+    System.out.println("Health: " + warrior.getHealth());
+    System.out.println("Mana: " + warrior.getMana());
+    System.out.println("Role: " + warrior.getRole());
 
     System.out.println("\nItem Details:");
     System.out.println("Name: " + sword.getName());
