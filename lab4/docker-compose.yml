@@ -1,0 +1,5 @@
+services:
+  game-dev-app:
+    build: .
+    image: game-dev-builder-example:latest
+    container_name: game_dev_app
